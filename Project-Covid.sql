@@ -30,7 +30,7 @@ Order By 1, 2
 
 Select location, population, MAX(total_cases) AS HighestInfectionCount, MAX((total_cases/population)) * 100 AS PercentPopulationInfected
 From PortfolioProject..CovidDeaths
---Where location like '%Ghana%'
+--Where location like 'Ghana'
 Where continent is not null
 Group By location, population
 Order By PercentPopulationInfected DESC
@@ -40,7 +40,7 @@ Order By PercentPopulationInfected DESC
 
 Select location, MAX(cast(total_deaths as int)) AS HighestDeathCount
 From PortfolioProject..CovidDeaths
---Where location like '%Ghana%' 
+--Where location like 'Ghana' 
 Where continent is not Null
 Group By location
 Order By HighestDeathCount desc
@@ -52,7 +52,7 @@ Order By HighestDeathCount desc
 
 Select continent, MAX(cast(total_deaths as int)) AS HighestDeathCount
 From PortfolioProject..CovidDeaths
---Where location like '%Ghana%'
+--Where location like 'Ghana'
 Where continent is not Null
 Group By continent
 Order By HighestDeathCount DESC
